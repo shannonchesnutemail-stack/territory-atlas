@@ -78,8 +78,9 @@
   </footer>
 
 </div>
-<script src="site-data.js"></script>
-<script>window.__COUNTIES__=window.__DATA__.items;window.__VBH__=window.__DATA__.map.vbh;</script>
+<script src="site-core.js"></script>
+<script src="site-zips.js"></script>
+<script>window.__COUNTIES__=(window.__CORE__.items||[]).map(function(d){d.zips=(window.__ZIPS__||{})[d.f]||[];return d;});window.__VBH__=window.__CORE__.map.vbh;</script>
 <script>window.__MAP__=null;</script>
 <script src="map.js"></script>
 <script src="app.js"></script>
