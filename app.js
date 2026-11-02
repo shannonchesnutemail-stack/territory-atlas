@@ -11,19 +11,23 @@ var selEl=document.getElementById('selbody');
 var searchEl=document.getElementById('q');
 var sortBy='pop', selected=null;
 var GROUPS=Array.prototype.slice.call(svg.querySelectorAll('.cty'));
-var G={}; GROUPS.forEach(function(el){G[el.getAttribute('data-i')]=el;});
+var G={}; GROUPS.forEach(function(el){
+  G[el.getAttribute('data-i')]=el;
+  var d=DATA[+el.getAttribute('data-i')];
+  if(d&&d.n)el.setAttribute('aria-label',d.n+' County, population '+d.pop.toLocaleString('en-US'));
+});
 function nf(n){return n.toLocaleString('en-US');}
 function row(k,v){return '<div class="tr"><span>'+k+'</span><b>'+v+'</b></div>';}
 function kv(k,v){return '<div class="r"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>';}
+function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-');}
 function place(e){var r=stage.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,hw=tip.offsetWidth/2;
-  x=Math.max(hw+6,Math.min(r.width-hw-6,x)); tip.style.left=x+'px'; tip.style.top=(y-8)+'px'; return {r:r};}
+  x=Math.max(hw+6,Math.min(r.width-hw-6,x)); tip.style.left=x+'px'; tip.style.top=(y-8)+'px';}
 function showTip(e,d){
   tip.innerHTML='<p class="tn">'+d.n+' County</p>'+row('Population',nf(d.pop))+row('Housing units',nf(d.hu))+
     row('Land area',nf(d.area)+' sq mi')+row('People / sq mi',nf(Math.round(d.dens)));
   place(e); tip.classList.add('on');
 }
 function hideTip(){tip.classList.remove('on');}
-function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-');}
 function select(i){
   selected=i;
   GROUPS.forEach(function(el){el.classList.toggle('sel',el.getAttribute('data-i')===String(i));});
