@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Nebraska Counties - Population, Housing &amp; ZIP Codes | Murray Roofing</title>
+<meta name="description" content="All 93 Nebraska counties with population, housing units, ZIP codes, land area and density. Murray Roofing territory atlas.">
+<style>
+@font-face{font-family:'Montserrat';src:url(brand-font.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+</style>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="print-only prhdr">
+    <div><span class="prhdr-t">Nebraska County Atlas</span><span class="prhdr-s">Population &amp; Housing &#183; U.S. Census Bureau, 2023 estimates</span></div>
+    <div class="prhdr-b">MURRAY ROOFING</div>
+  </div>
+
+  <header class="masthead">
+    <div class="brandline">
+      <img class="logo" src="brand-logo.png" alt="Murray Roofing">
+      <div>
+        <p class="mh-eye">Murray Roofing &#183; Territory Atlas</p>
+        <h1 class="mh-title">Nebraska Counties</h1>
+        <p class="mh-sub">Population, housing &amp; ZIP codes &#183; <b>U.S. Census Bureau</b></p>
+      </div>
+    </div>
+    <div class="mh-stats"><div class="tile"><span class="k">Counties</span><span class="v">93</span><span class="s">in Nebraska</span></div><div class="tile"><span class="k">Population</span><span class="v">1,978,379</span><span class="s">2023 estimate</span></div><div class="tile"><span class="k">Housing Units</span><span class="v">855,631</span><span class="s">total units</span></div><div class="tile"><span class="k">Land Area</span><span class="v">76,824</span><span class="s">square miles</span></div><div class="tile"><span class="k">Largest</span><span class="v">Douglas</span><span class="s">589,540 people</span></div></div>
+  </header>
+
+  <div class="layout">
+    <section class="panel">
+      <div class="toolbar">
+        <span class="tb-title">Nebraska &#183; 93 Counties</span>
+        <label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbb05e" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg><input id="q" type="search" placeholder="Find a county..." aria-label="Find a county"></label>
+        <button type="button" class="abtn no-print" id="dlall">All ZIPs (CSV)</button>
+      </div>
+      <div class="map-stage" id="stage"><div class="tip" id="tip" role="status"></div></div>
+      <div class="legend"><div class="lg-head"><b>Population by County</b><span>Logarithmic scale</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>383</span><span>1.3K</span><span>4.4K</span><span>15K</span><span>51K</span><span>173K</span></div></div>
+    </section>
+
+    <aside class="rail">
+      <div class="card" id="zipcard">
+        <h3>ZIP Codes <em id="zipfor">&mdash;</em></h3>
+        <div id="zips"></div>
+      </div>
+      <div class="card">
+        <h3>County Detail <em>click the map</em></h3>
+        <div id="selbody"></div>
+      </div>
+      <div class="card">
+        <h3>Counties <em>93 total</em></h3>
+        <div class="seg" style="margin-bottom:10px">
+          <button data-sort="pop" aria-pressed="true">By population</button>
+          <button data-sort="name" aria-pressed="false">A&ndash;Z</button>
+        </div>
+        <div class="list" id="ranklist"></div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="tablewrap">
+    <h2>All 93 Counties &mdash; Reference Table</h2>
+    <p class="tnote">Sorted largest to smallest by population. Sources: U.S. Census Bureau Vintage 2023 county population estimates; 2023 ACS 5-Year Estimates (housing units); Census 2020 ZCTA-to-county relationship file (ZIP codes). A ZIP code can span counties, so the share shown is the portion of that ZIP's land area inside the county.</p>
+    <table class="data">
+      <thead><tr><th>#</th><th>County</th><th>Population</th><th>Housing Units</th><th>Land Area (sq mi)</th><th>People / sq mi</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer class="mastfoot">
+    <div><b>Murray Roofing</b> &mdash; Nebraska County Atlas with ZIP codes<br>
+    Data: U.S. Census Bureau. This page is a reusable territory template &mdash; other states drop in as one data file.</div>
+    <div class="fr"><img class="flogo" src="brand-logo.png" alt="Murray Roofing"></div>
+  </footer>
+
+</div>
+<script src="site-data.js"></script>
+<script>window.__COUNTIES__=window.__DATA__.items;window.__VBH__=window.__DATA__.map.vbh;</script>
+<script>window.__MAP__=null;</script>
+<script src="map.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
