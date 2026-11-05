@@ -1,2 +1,26 @@
 /* ZIP overlay + campaign styles */
-.zip{fill:none;stroke:rgba(255,255,255,.10);stroke-width:.5;pointer-events:none;vector-effec
+.zip{fill:none;stroke:rgba(255,255,255,.10);stroke-width:.5;pointer-events:none;vector-effect:non-scaling-stroke}
+.zip.N{fill:rgba(255,255,255,.05)}
+.zip.O{fill:rgba(243,140,0,.42)!important;stroke:rgba(255,183,77,.85)!important;stroke-width:.9!important}
+.zip.R{fill:rgba(226,26,26,.55)!important;stroke:rgba(255,120,120,1)!important;stroke-width:1.1!important}
+.cty-name{paint-order:stroke;stroke:rgba(4,10,4,.92);stroke-width:2.6px;fill:#f2f8ee;font-weight:800}
+.cty-pop{paint-order:stroke;stroke:rgba(4,10,4,.9);stroke-width:2px;fill:#dcead4}
+.cty.dark-lbl .cty-name{fill:#101a0b;stroke:rgba(255,255,255,.6)}
+.cty.dark-lbl .cty-pop{fill:#1c2a13;stroke:rgba(255,255,255,.55)}
+[data-lift] .cty-name{paint-order:stroke;stroke:rgba(4,10,4,.95);stroke-width:2.8px;fill:#f4faf0}
+[data-lift] .cty-pop{paint-order:stroke;stroke:rgba(4,10,4,.95);stroke-width:2.2px;fill:#e2f0da}
+.zip.pk{fill:rgba(203,176,94,.85)!important;stroke:#fff!important;stroke-width:1.4!important}
+#ziplayer{pointer-events:all}
+.cty.pk{stroke:#ffd166!important;stroke-width:2.6!important}
+.lg-band{display:flex;align-items:center;gap:6px;margin-top:9px;font-size:11px;font-weight:600;color:#e6dcc6;flex-wrap:wrap}
+.lg-band .dotR{width:13px;height:13px;border-radius:3px;background:#e21a1a;border:1px solid #ff7878;display:inline-block}
+.lg-band .dotO{width:13px;height:13px;border-radius:3px;background:#f38c00;border:1px solid #ffb74d;display:inline-block;margin-left:8px}
+table.roi{width:100%;border-collapse:collapse;font-size:11.5px;margin-top:10px}
+table.roi th{background:rgba(9,17,11,.6);color:var(--gold-l);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:6px 5px;text-align:right;font-weight:700}
+table.roi th:first-child{text-align:left}
+table.roi td{padding:6px 5px;text-align:right;border-bottom:1px solid rgba(203,176,94,.12);color:#e8e3d4}
+table.roi td:first-child{text-align:left;font-weight:700;color:#fff}
+table.roi tr:hover td{background:rgba(203,176,94,.10)}
+#smode{margin-bottom:8px}
+#picklist .or{font-size:10.5px;font-weight:700;color:#ffa733}
+#picklist .nm small{color:var(--faint);font-weight:500;font-size:10.5px}
