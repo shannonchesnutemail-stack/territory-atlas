@@ -4,49 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>Nebraska Storm &amp; Market Atlas | Murray Roofing</title>
-<meta name="description" content="10-year hail and wind history, roof age, market size and competition for all 93 Nebraska counties.">
+<title>Nebraska Storm &amp; Market Map | Murray Roofing</title>
+<meta name="description" content="Population, housing, income and qualifying storm history for all 93 Nebraska counties.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 </style>
-<link rel="stylesheet" href="c-screen.css"><link rel="stylesheet" href="c-wx.css"><link rel="stylesheet" href="c-print.css" media="print">
+<link rel="stylesheet" href="c-screen.css"><link rel="stylesheet" href="c-wx.css"><link rel="stylesheet" href="c-map.css"><link rel="stylesheet" href="c-print.css" media="print">
 </head>
 <body>
 <div class="wrap">
-<div class="print-only prhdr"><div><span class="prhdr-t">Nebraska Storm &amp; Market Atlas</span><span class="prhdr-s">NOAA Storm Events 2015-2024 · U.S. Census Bureau</span></div><div class="prhdr-b">MURRAY ROOFING</div></div>
+<div class="print-only prhdr"><div><span class="prhdr-t">Nebraska Storm &amp; Market Map</span><span class="prhdr-s">NOAA Storm Events 2016-2026 · U.S. Census Bureau</span></div><div class="prhdr-b">MURRAY ROOFING</div></div>
 <header class="masthead">
-<div class="brandline"><img class="logo" src="brand-logo.png" alt="Murray Roofing"><div><p class="mh-eye">Murray Roofing · Territory Atlas</p><h1 class="mh-title">Where the Storms Are</h1><p class="mh-sub">10-year hail &amp; wind history, roof age &amp; competition · <b>93 Nebraska counties</b></p></div></div>
-<div class="mh-stats"><div class="tile"><span class="k">Years</span><span class="v">10</span><span class="s">2015-2024 NOAA</span></div><div class="tile"><span class="k">Hail events</span><span class="v">5,638</span><span class="s">statewide</span></div><div class="tile"><span class="k">Wind events</span><span class="v">5,688</span><span class="s">statewide</span></div><div class="tile"><span class="k">Counties</span><span class="v">83</span><span class="s">no roofing firm rpt</span></div><div class="tile"><span class="k">Top market</span><span class="v">Custer</span><span class="s">score 7.6</span></div></div>
+<div class="brandline"><img class="logo" src="brand-logo.png" alt="Murray Roofing"><div><p class="mh-eye">Murray Roofing · Territory Atlas</p><h1 class="mh-title">Nebraska Storm &amp; Market Map</h1><p class="mh-sub">Population · Housing · Income · Qualifying Storms · <b>93 counties</b></p></div></div>
+<div class="mh-stats"><div class="tile"><span class="k">Red now</span><span class="v">21</span><span class="s">stormed in 120 days</span></div><div class="tile"><span class="k">Qual hail</span><span class="v">5,015</span><span class="s">1"+ · 2016-2026</span></div><div class="tile"><span class="k">Qual wind</span><span class="v">3,629</span><span class="s">60mph+ · 2016-2026</span></div><div class="tile"><span class="k">Minor</span><span class="v">3,509</span><span class="s">excluded from score</span></div><div class="tile"><span class="k">Housing units</span><span class="v">855,631</span><span class="s">statewide</span></div></div>
 </header>
 <div class="layout">
 <section class="panel">
-<div class="toolbar"><span class="tb-title">Color the map by</span><div class="seg" id="meas"><button data-m="score" aria-pressed="true">Opportunity</button><button data-m="hail" aria-pressed="false">Hail</button><button data-m="wind" aria-pressed="false">Wind</button><button data-m="age" aria-pressed="false">Roof Age</button><button data-m="pop" aria-pressed="false">Population</button></div><label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbb05e" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg><input id="q" type="search" placeholder="Find a county..." aria-label="Find a county"></label></div>
+<div class="toolbar">
+<span class="tb-title">Map layer</span>
+<div class="seg" id="meas">
+<button data-m="all" aria-pressed="true">Overlay</button>
+<button data-m="storm" aria-pressed="false">Weather</button>
+<button data-m="pop" aria-pressed="false">Population</button>
+<button data-m="hu" aria-pressed="false">Housing</button>
+<button data-m="inc" aria-pressed="false">Income</button>
+</div>
+<label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbb05e" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.2-3.2"/></svg><input id="q" type="search" placeholder="Find a county..." aria-label="Find a county"></label>
+</div>
 <div class="map-stage" id="stage"><div id="mapin"></div><div class="tip" id="tip" role="status"></div></div>
-<div class="legend" id="leg_score"><div class="lg-head"><b>Storm Opportunity Score</b><span>1-10 composite</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>1.9</span><span>3.6</span><span>5.1</span><span>6.3</span><span>7.2</span><span>7.6</span></div></div>
-<div class="legend" id="leg_hail" style="display:none"><div class="lg-head"><b>Hail events</b><span>2015-2024</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>few</span><span></span><span></span><span></span><span></span><span>many</span></div></div>
-<div class="legend" id="leg_wind" style="display:none"><div class="lg-head"><b>High-wind events</b><span>2015-2024</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>few</span><span></span><span></span><span></span><span></span><span>many</span></div></div>
-<div class="legend" id="leg_age" style="display:none"><div class="lg-head"><b>Median year built</b><span>older = more replacement</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>newest</span><span></span><span></span><span></span><span></span><span>oldest</span></div></div>
-<div id="leg_pop" style="display:none"><div class="legend"><div class="lg-head"><b>Population by County</b><span>Logarithmic scale</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>383</span><span>1.3K</span><span>4.4K</span><span>15K</span><span>51K</span><span>173K</span></div></div></div>
+<div class="legend" id="leg_all"><div class="lg-head"><b>All four layers</b><span>red = qualifying storm in 120 days</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>low</span><span></span><span></span><span></span><span></span><span>high</span></div><div class="lg-red"><i></i> Bright red = 1"+ hail or 60+ mph wind within the last 120 days</div></div>
+<div class="legend" id="leg_storm" style="display:none"><div class="lg-head"><b>Qualifying storms</b><span>2016-2026 · 1"+ hail / 60mph+</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>0</span><span></span><span></span><span></span><span></span><span>most</span></div><div class="lg-red"><i></i> Bright red = qualifying storm in the last 120 days</div></div>
+<div class="legend" id="leg_pop" style="display:none"><div class="lg-head"><b>Population</b><span>2023 estimate</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>383</span><span>1.3K</span><span>4.4K</span><span>15K</span><span>51K</span><span>589K</span></div><div class="lg-red"><i></i> Bright red = qualifying storm in the last 120 days</div></div>
+<div class="legend" id="leg_hu" style="display:none"><div class="lg-head"><b>Housing units</b><span>2023</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>few</span><span></span><span></span><span></span><span></span><span>most</span></div><div class="lg-red"><i></i> Bright red = qualifying storm in the last 120 days</div></div>
+<div class="legend" id="leg_inc" style="display:none"><div class="lg-head"><b>Median household income</b><span>2023 ACS</span></div><div class="lg-bar"><i class="b0"></i><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i><i class="b5"></i></div><div class="lg-ticks"><span>lowest</span><span></span><span></span><span></span><span></span><span>highest</span></div><div class="lg-red"><i></i> Bright red = qualifying storm in the last 120 days</div></div>
 </section>
 <aside class="rail">
-<div class="card" id="zipcard"><h3>ZIP Codes <em id="zipfor">-</em></h3><div id="zips"></div></div>
-<div class="card"><h3>County Detail <em>click the map</em></h3><div id="selbody"></div></div>
-<div class="card"><h3>Storm Opportunity <em>top 10 of 93</em></h3><p class="opnote">Weighted: hail 30%, roof age 20%, market size 20%, wind 15%, competition 15%.</p><div class="list" id="oplist"></div></div>
+<div class="card" id="selectcard"><h3>Blueprint Builder <em id="selcount">0 counties</em></h3><p class="opnote">Pick counties, then send the hard data to the ROI Calculator to build a marketing blueprint. Red = stormed in the last 120 days.</p><div id="picklist"></div><div class="bpf"><button type="button" class="calcbtn" id="roibp">Build ROI Blueprint (0)</button><p class="opnote" style="margin:6px 0 0">Copies a blueprint payload and opens the Murray ROI Calculator. Thresholds travel with it: 1"+ hail, 60mph+ wind, 120 days.</p></div></div>
+<div class="card"><h3>County Detail <em id="zipfor">click the map</em></h3><div id="selbody"></div></div>
 </aside>
 </div>
 <section class="tablewrap">
-<h2>All 93 Counties - Storm, Market &amp; Competition Table</h2>
-<p class="tnote">Sorted by Storm Opportunity Score. Storm history: NOAA Storm Events database, 2015-2024. Roof age: 2023 ACS median year structure built. Market size: 2023 housing units. Competition: roofing contractors (NAICS 238160), Census County Business Patterns 2022 - a blank means none reported or Census-suppressed.</p>
-<table class="data"><thead><tr><th>#</th><th>County</th><th>Score</th><th>Hail ev</th><th>Wind ev</th><th>Max hail</th><th>Median built</th><th>Housing units</th><th>Roofers</th></tr></thead><tbody></tbody></table>
+<h2>All 93 Counties - Four-Layer Table</h2>
+<p class="tnote">Sorted by recently-stormed first. Storms are qualifying only: hail 1 inch or larger, or wind 60 mph or greater (NOAA Storm Events, 2016-2026). Minor events are counted separately and never drive the score. Income: 2023 ACS median household income. Housing and population: U.S. Census 2023.</p>
+<table class="data"><thead><tr><th>#</th><th>County</th><th>Recent</th><th>Storm</th><th>Qual hail</th><th>Qual wind</th><th>Minor</th><th>Population</th><th>Housing</th><th>Income</th></tr></thead><tbody></tbody></table>
 </section>
-<footer class="mastfoot"><div><b>Murray Roofing</b> - Nebraska Storm &amp; Market Atlas<br>Sources: NOAA Storm Events (2015-2024); U.S. Census ACS 2023; Census County Business Patterns 2022; Census 2020 ZCTA crosswalk. Score is a Murray-defined weighted model, not a Census or NOAA metric.</div><div class="fr"><img class="flogo" src="brand-logo.png" alt="Murray Roofing"></div></footer>
+<footer class="mastfoot"><div><b>Murray Roofing</b> - Nebraska Storm &amp; Market Map<br>Sources: NOAA Storm Events (2016-2026); U.S. Census ACS 2023; Census County Business Patterns 2022. Qualifying storm = 1"+ hail or 60mph+ wind.</div><div class="fr"><img class="flogo" src="brand-logo.png" alt="Murray Roofing"></div></footer>
 </div>
 <script src="site-core.js"></script>
-<script src="zips-1.js"></script>
-<script src="zips-2.js"></script>
-<script src="wx-1.js"></script>
-<script src="wx-2.js"></script>
-<script>window.__COUNTIES__=(window.__CORE__.items||[]).map(function(d){d.zips=(window.__ZIPS__||{})[d.f]||[];d.wx=(window.__WX__||{})[d.f]||null;return d;});window.__VBH__=window.__CORE__.map.vbh;</script>
+<script src="storm-data-1.js"></script>
+<script src="storm-data-2.js"></script>
+<script>window.__COUNTIES__=(window.__CORE__.items||[]).map(function(d){d.sd=(window.__SD__||{})[d.f]||null;return d;});window.__VBH__=window.__CORE__.map.vbh;</script>
+<script>window.__MAP__=null;</script>
 <script>Promise.all([fetch("map-1.svg").then(function(r){return r.text();}),fetch("map-2.svg").then(function(r){return r.text();})]).then(function(a){document.getElementById("mapin").innerHTML=a[0]+a[1];var s=document.createElement("script");s.src="app.js";document.body.appendChild(s);});</script>
 </body>
 </html>
