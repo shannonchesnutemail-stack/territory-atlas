@@ -1,0 +1,25 @@
+/* Storm / opportunity layer styles */
+.opnote{font-size:11.5px;color:var(--faint);font-weight:500;margin:0 0 10px;line-height:1.45}
+#oplist{display:flex;flex-direction:column;gap:2px}
+#oplist button{display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:center;width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:0;border-radius:9px;padding:7px 9px;cursor:pointer;transition:.15s}
+#oplist button:hover{background:rgba(203,176,94,.13)}
+#oplist button.on{background:rgba(77,143,80,.24);box-shadow:inset 0 0 0 1px rgba(203,176,94,.4)}
+#oplist .sc{font-size:14px;font-weight:800;color:var(--gold-l);text-align:center}
+#oplist .nm{font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#oplist .sub{grid-column:2/-1;font-size:10.5px;color:var(--muted);font-weight:500;margin-top:-2px}
+#oplist .bar{grid-column:1/-1;height:4px;border-radius:3px;background:rgba(255,255,255,.07);overflow:hidden;margin-top:1px}
+#oplist .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#4e7a38,#c9a04a)}
+.wxgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;border-radius:10px;overflow:hidden;border:1px solid rgba(203,176,94,.16)}
+.wxgrid .c{background:rgba(8,14,9,.42);padding:8px 11px}
+.wxgrid .c:nth-child(odd){background:rgba(8,14,9,.24)}
+.wxgrid .k{display:block;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:.03em}
+.wxgrid .v{display:block;font-size:16px;font-weight:800;color:#fff;margin-top:2px}
+.wxgrid .v small{font-size:11px;color:var(--muted);font-weight:600}
+.scorebadge{display:inline-flex;align-items:baseline;gap:6px;background:linear-gradient(180deg,#4e7a38,#38562c);border:1px solid rgba(201,160,74,.5);border-radius:10px;padding:5px 12px;margin:2px 0 10px}
+.scorebadge b{font-size:24px;font-weight:800;color:#fff;line-height:1}
+.scorebadge span{font-size:11px;color:#e6d9a8;font-weight:700;letter-spacing:.06em}
+.bars{display:grid;gap:6px;margin-top:11px}
+.brow{display:grid;grid-template-columns:96px 1fr;gap:9px;align-items:center}
+.brow .bl{font-size:11px;color:var(--muted);font-weight:600}
+.brow .bt{height:7px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+.brow .bt i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#548a3f,#c9a04a)}
