@@ -1,28 +1,34 @@
 # Murray Roofing — Territory Atlas
 
-Interactive county atlas for roofing territory planning: population, housing units,
-ZIP codes, land area and density per county. Reusable across states.
+Storm & market intelligence for roofing territory planning. Live:
+https://shannonchesnutemail-stack.github.io/territory-atlas/
 
-**Live site:** https://shannonchesnutemail-stack.github.io/territory-atlas/
+## What it shows
 
-## What it does
-
-- Click any county for its ZIP codes (Copy / CSV / Link)
-- Deep link straight to a county: `#douglas`, `#sarpy`
-- All 93 Nebraska counties in the reference table
-- Print stylesheet built in (8.5 x 11)
+Color the map by **Opportunity score, hail, wind, roof age, or population**.
+Click any county for ZIP codes, storm history, market size and competition.
 
 ## Data sources
 
-- Population: U.S. Census Bureau Vintage 2023 county estimates
-- Housing units: 2023 ACS 5-Year Estimates
-- ZIP codes: Census 2020 ZCTA-to-county relationship file
-- Geometry: Census cartographic boundary files
+- **Storm history:** NOAA Storm Events database, 2015-2024 (hail + high/thunderstorm wind)
+- **Housing units & median year built:** U.S. Census ACS 2023
+- **Roofing contractors:** Census County Business Patterns 2022 (NAICS 238160)
+- **ZIP codes:** Census 2020 ZCTA-to-county relationship file
 
-A ZIP can span counties; the share shown is the portion of that ZIP's land
-area inside the county.
+## The Opportunity Score
+
+A Murray-defined weighted model (1-10), not a Census or NOAA metric:
+
+- Hail frequency 30%
+- Roof age 20%
+- Market size 20%
+- Wind frequency 15%
+- Low competition 15%
+
+A blank roofing-contractor count means none reported or Census-suppressed.
 
 ## Adding another state
 
-The site reads `site-data.js` (data) plus `map.js` (geometry). To add a state,
-produce those two files for the new state and swap them in.
+The site reads separate data and geometry files. To add a state, regenerate
+`site-core.js`, `zips-1/2.js`, `wx-1/2.js` and `map-1/2.svg`; the app, CSS and
+page shell are reused as-is.
